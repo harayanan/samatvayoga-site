@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  --color-saffron-50: #fef7ed;
+  --color-saffron-100: #fdecd4;
+  --color-saffron-200: #fad5a8;
+  --color-saffron-300: #f6b871;
+  --color-saffron-400: #f19338;
+  --color-saffron-500: #ee7a15;
+  --color-saffron-600: #df600b;
+  --color-saffron-700: #b9480b;
+  --color-saffron-800: #933910;
+  --color-saffron-900: #773010;
+
+  --color-sage-50: #f6f7f4;
+  --color-sage-100: #e9ebe3;
+  --color-sage-200: #d3d8c8;
+  --color-sage-300: #b5bea5;
+  --color-sage-400: #97a280;
+  --color-sage-500: #7a8763;
+  --color-sage-600: #5f6b4c;
+  --color-sage-700: #4b543d;
+  --color-sage-800: #3d4534;
+  --color-sage-900: #353b2e;
+
+  --color-cream-50: #fefdfb;
+  --color-cream-100: #fdf8f0;
+  --color-cream-200: #faf0de;
+  --color-cream-300: #f5e4c5;
+  --color-cream-400: #eed3a4;
+
+  --color-warm-800: #3d2e1e;
+  --color-warm-900: #2a1f14;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-warm-800);
+    background-color: var(--color-cream-50);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
