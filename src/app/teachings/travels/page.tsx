@@ -37,9 +37,17 @@ export default function TravelsPage() {
     <>
       <Header />
 
-      {/* Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-cream-100 to-cream-50">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      {/* Hero with image */}
+      <section className="relative pt-32 pb-16 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/yoga-studio.jpg"
+            alt=""
+            className="w-full h-full object-cover opacity-12"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-cream-100/80 via-cream-50/90 to-cream-50" />
+        </div>
+        <div className="relative max-w-4xl mx-auto px-6 text-center">
           <p className="text-saffron-600/70 font-serif italic tracking-wide mb-4">
             Teachings
           </p>
@@ -57,7 +65,15 @@ export default function TravelsPage() {
       {/* Home Base */}
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="p-8 md:p-10 bg-sage-50/50 border border-sage-200/40 rounded-sm">
+          <div className="bg-sage-50/50 border border-sage-200/40 rounded-sm overflow-hidden">
+            <div className="aspect-[21/9] relative">
+              <img
+                src="/images/yoga-studio.jpg"
+                alt="Patanjala Yoga Kendra, Rishikesh"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-8 md:p-10">
             <div className="flex items-start gap-4 mb-4">
               <MapPin size={20} className="text-sage-600 mt-1 shrink-0" />
               <div>
@@ -87,6 +103,7 @@ export default function TravelsPage() {
             <p className="ml-9 mt-4 text-xs text-warm-800/40">
               {homeBase.address}
             </p>
+            </div>
           </div>
         </div>
       </section>

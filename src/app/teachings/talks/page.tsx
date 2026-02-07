@@ -28,9 +28,17 @@ export default function TalksPage() {
     <>
       <Header />
 
-      {/* Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-cream-100 to-cream-50">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      {/* Hero with image */}
+      <section className="relative pt-32 pb-16 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/siddhartha-hero.jpg"
+            alt=""
+            className="w-full h-full object-cover object-top opacity-12"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-cream-100/80 via-cream-50/90 to-cream-50" />
+        </div>
+        <div className="relative max-w-4xl mx-auto px-6 text-center">
           <p className="text-saffron-600/70 font-serif italic tracking-wide mb-4">
             Teachings
           </p>

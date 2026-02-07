@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import SectionHeading from "@/components/SectionHeading";
 import { bio, teachings } from "@/data/about";
 import { onlineClasses } from "@/data/online-classes";
+import Image from "next/image";
 import { BookOpen, Globe, Video, ArrowRight } from "lucide-react";
 
 export default function HomePage() {
@@ -84,21 +85,14 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              {/* Decorative frame placeholder for photo */}
-              <div className="aspect-[3/4] bg-gradient-to-br from-sage-100 to-cream-200 rounded-sm relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-saffron-100/50 flex items-center justify-center">
-                      <span className="font-serif text-4xl text-saffron-700/60">
-                        Om
-                      </span>
-                    </div>
-                    <p className="font-serif text-sage-600/60 text-lg italic">
-                      {bio.name}
-                    </p>
-                  </div>
-                </div>
-                <div className="absolute inset-4 border border-saffron-200/40 rounded-sm" />
+              <div className="aspect-[3/4] rounded-sm relative overflow-hidden">
+                <Image
+                  src="/images/siddhartha-hero.jpg"
+                  alt="Shri Siddhartha Krishna teaching"
+                  fill
+                  className="object-cover object-top"
+                />
+                <div className="absolute inset-4 border border-cream-100/20 rounded-sm" />
               </div>
             </div>
 
@@ -154,61 +148,91 @@ export default function HomePage() {
             {/* Online Classes */}
             <Link
               href="/teachings/online-classes"
-              className="group p-8 bg-cream-100/50 border border-cream-200 rounded-sm hover:border-saffron-200 hover:bg-saffron-50/30 transition-all duration-500"
+              className="group bg-cream-100/50 border border-cream-200 rounded-sm hover:border-saffron-200 hover:bg-saffron-50/30 transition-all duration-500 overflow-hidden"
             >
-              <div className="w-12 h-12 rounded-full bg-saffron-100 flex items-center justify-center mb-6 group-hover:bg-saffron-200 transition-colors duration-300">
-                <Video size={20} className="text-saffron-700" />
+              <div className="aspect-[16/10] relative overflow-hidden">
+                <Image
+                  src="/images/online-course.jpg"
+                  alt="Online yoga class"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
               </div>
-              <h3 className="font-serif text-xl text-warm-900 mb-3">
-                Online Classes
-              </h3>
-              <p className="text-sm text-warm-800/60 leading-relaxed mb-4">
-                Join live sessions on the Bhagavad Gita, Upanishads, Yoga
-                Sutras, Vishnu Sahasranama, and Sanskrit Grammar.
-              </p>
-              <p className="text-sm text-warm-800/40">
-                {onlineClasses.length} ongoing courses
-              </p>
+              <div className="p-8">
+                <div className="w-10 h-10 rounded-full bg-saffron-100 flex items-center justify-center mb-4 group-hover:bg-saffron-200 transition-colors duration-300">
+                  <Video size={16} className="text-saffron-700" />
+                </div>
+                <h3 className="font-serif text-xl text-warm-900 mb-3">
+                  Online Classes
+                </h3>
+                <p className="text-sm text-warm-800/60 leading-relaxed mb-4">
+                  Join live sessions on the Bhagavad Gita, Upanishads, Yoga
+                  Sutras, Vishnu Sahasranama, and Sanskrit Grammar.
+                </p>
+                <p className="text-sm text-warm-800/40">
+                  {onlineClasses.length} ongoing courses
+                </p>
+              </div>
             </Link>
 
             {/* Talks & Archive */}
             <Link
               href="/teachings/talks"
-              className="group p-8 bg-cream-100/50 border border-cream-200 rounded-sm hover:border-saffron-200 hover:bg-saffron-50/30 transition-all duration-500"
+              className="group bg-cream-100/50 border border-cream-200 rounded-sm hover:border-saffron-200 hover:bg-saffron-50/30 transition-all duration-500 overflow-hidden"
             >
-              <div className="w-12 h-12 rounded-full bg-sage-100 flex items-center justify-center mb-6 group-hover:bg-sage-200 transition-colors duration-300">
-                <BookOpen size={20} className="text-sage-700" />
+              <div className="aspect-[16/10] relative overflow-hidden">
+                <Image
+                  src="/images/siddhartha-hero.jpg"
+                  alt="Shri Siddhartha Krishna speaking"
+                  fill
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                />
               </div>
-              <h3 className="font-serif text-xl text-warm-900 mb-3">
-                Talks & Archive
-              </h3>
-              <p className="text-sm text-warm-800/60 leading-relaxed mb-4">
-                Past lectures, recorded discourses, and published writings on
-                Vedanta and Yoga philosophy.
-              </p>
-              <p className="text-sm text-warm-800/40">
-                Videos, articles & publications
-              </p>
+              <div className="p-8">
+                <div className="w-10 h-10 rounded-full bg-sage-100 flex items-center justify-center mb-4 group-hover:bg-sage-200 transition-colors duration-300">
+                  <BookOpen size={16} className="text-sage-700" />
+                </div>
+                <h3 className="font-serif text-xl text-warm-900 mb-3">
+                  Talks & Archive
+                </h3>
+                <p className="text-sm text-warm-800/60 leading-relaxed mb-4">
+                  Past lectures, recorded discourses, and published writings on
+                  Vedanta and Yoga philosophy.
+                </p>
+                <p className="text-sm text-warm-800/40">
+                  Videos, articles & publications
+                </p>
+              </div>
             </Link>
 
             {/* Travels */}
             <Link
               href="/teachings/travels"
-              className="group p-8 bg-cream-100/50 border border-cream-200 rounded-sm hover:border-saffron-200 hover:bg-saffron-50/30 transition-all duration-500"
+              className="group bg-cream-100/50 border border-cream-200 rounded-sm hover:border-saffron-200 hover:bg-saffron-50/30 transition-all duration-500 overflow-hidden"
             >
-              <div className="w-12 h-12 rounded-full bg-cream-200 flex items-center justify-center mb-6 group-hover:bg-cream-300 transition-colors duration-300">
-                <Globe size={20} className="text-saffron-800" />
+              <div className="aspect-[16/10] relative overflow-hidden">
+                <Image
+                  src="/images/class-scene.jpg"
+                  alt="Yoga class at Patanjala Yoga Kendra"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
               </div>
-              <h3 className="font-serif text-xl text-warm-900 mb-3">
-                Travels & Workshops
-              </h3>
-              <p className="text-sm text-warm-800/60 leading-relaxed mb-4">
-                In-person workshops, retreats, and lecture series across India
-                and around the world.
-              </p>
-              <p className="text-sm text-warm-800/40">
-                Upcoming events & home base
-              </p>
+              <div className="p-8">
+                <div className="w-10 h-10 rounded-full bg-cream-200 flex items-center justify-center mb-4 group-hover:bg-cream-300 transition-colors duration-300">
+                  <Globe size={16} className="text-saffron-800" />
+                </div>
+                <h3 className="font-serif text-xl text-warm-900 mb-3">
+                  Travels & Workshops
+                </h3>
+                <p className="text-sm text-warm-800/60 leading-relaxed mb-4">
+                  In-person workshops, retreats, and lecture series across India
+                  and around the world.
+                </p>
+                <p className="text-sm text-warm-800/40">
+                  Upcoming events & home base
+                </p>
+              </div>
             </Link>
           </div>
         </div>

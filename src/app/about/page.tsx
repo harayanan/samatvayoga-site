@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SectionHeading from "@/components/SectionHeading";
@@ -34,25 +35,16 @@ export default function AboutPage() {
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-5 gap-12 items-start">
-            {/* Portrait area */}
+            {/* Portrait */}
             <div className="md:col-span-2">
-              <div className="aspect-[3/4] bg-gradient-to-br from-sage-100 to-cream-200 rounded-sm relative overflow-hidden sticky top-28">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-saffron-100/50 flex items-center justify-center">
-                      <span className="font-serif text-3xl text-saffron-700/60">
-                        Om
-                      </span>
-                    </div>
-                    <p className="font-serif text-sage-600/60 italic">
-                      {bio.name}
-                    </p>
-                    <p className="text-xs text-sage-500/50 mt-1">
-                      {bio.location}
-                    </p>
-                  </div>
-                </div>
-                <div className="absolute inset-3 border border-saffron-200/30 rounded-sm" />
+              <div className="aspect-[3/4] rounded-sm relative overflow-hidden sticky top-28">
+                <Image
+                  src="/images/siddhartha-hero.jpg"
+                  alt="Shri Siddhartha Krishna"
+                  fill
+                  className="object-cover object-top"
+                />
+                <div className="absolute inset-3 border border-cream-100/20 rounded-sm" />
               </div>
             </div>
 
@@ -118,45 +110,77 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto px-6">
           <SectionHeading title="Lineage & Tradition" />
           <div className="mt-12 grid sm:grid-cols-2 gap-8">
-            <div className="p-8 bg-cream-50 border border-cream-200/60 rounded-sm">
-              <h3 className="font-serif text-xl text-warm-900 mb-4">
-                Kailas Ashram Brahma Vidya Pitha
-              </h3>
-              <p className="text-sm text-warm-800/60 leading-relaxed">
-                A venerable monastery in Rishikesh dedicated to the teaching of
-                Vedanta, with historical connections to Swami Vivekananda, Swami
-                Ramatirtha, Swami Tapovan, and Swami Sivananda.
-              </p>
+            <div className="bg-cream-50 border border-cream-200/60 rounded-sm overflow-hidden">
+              <div className="p-8">
+                <h3 className="font-serif text-xl text-warm-900 mb-4">
+                  Kailas Ashram Brahma Vidya Pitha
+                </h3>
+                <p className="text-sm text-warm-800/60 leading-relaxed">
+                  A venerable monastery in Rishikesh dedicated to the teaching of
+                  Vedanta, with historical connections to Swami Vivekananda, Swami
+                  Ramatirtha, Swami Tapovan, and Swami Sivananda.
+                </p>
+              </div>
             </div>
-            <div className="p-8 bg-cream-50 border border-cream-200/60 rounded-sm">
-              <h3 className="font-serif text-xl text-warm-900 mb-4">
-                Patanjala Yoga Kendra
-              </h3>
-              <p className="text-sm text-warm-800/60 leading-relaxed">
-                An authorized Iyengar Yoga Centre established in 1993 on the
-                banks of the holy River Ganga in Rishikesh, founded by Shrimati
-                Usha Devi.
-              </p>
+            <div className="bg-cream-50 border border-cream-200/60 rounded-sm overflow-hidden">
+              <div className="aspect-[16/10] relative">
+                <Image
+                  src="/images/offline-course.jpg"
+                  alt="Teaching at Patanjala Yoga Kendra"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-8">
+                <h3 className="font-serif text-xl text-warm-900 mb-4">
+                  Patanjala Yoga Kendra
+                </h3>
+                <p className="text-sm text-warm-800/60 leading-relaxed">
+                  An authorized Iyengar Yoga Centre established in 1993 on the
+                  banks of the holy River Ganga in Rishikesh, founded by Shrimati
+                  Usha Devi.
+                </p>
+              </div>
             </div>
-            <div className="p-8 bg-cream-50 border border-cream-200/60 rounded-sm">
-              <h3 className="font-serif text-xl text-warm-900 mb-4">
-                Swami Vidyananda Giri Ji Maharaj
-              </h3>
-              <p className="text-sm text-warm-800/60 leading-relaxed">
-                Under whose tutelage Shri Siddhartha Krishna pursued advanced
-                studies in the Upanishads, Advaita Vedanta, Sanskrit grammar,
-                and Indian logic.
-              </p>
+            <div className="bg-cream-50 border border-cream-200/60 rounded-sm overflow-hidden">
+              <div className="aspect-[16/10] relative">
+                <Image
+                  src="/images/light-room.jpg"
+                  alt="B.K.S. Iyengar Guruji"
+                  fill
+                  className="object-cover object-top"
+                />
+              </div>
+              <div className="p-8">
+                <h3 className="font-serif text-xl text-warm-900 mb-4">
+                  The Iyengar Yoga Tradition
+                </h3>
+                <p className="text-sm text-warm-800/60 leading-relaxed">
+                  Rooted in the method of B.K.S. Iyengar Guruji, firmly based in
+                  the ancient Indian tradition of Yoga as defined in the Yoga
+                  Sutras of Patanjali.
+                </p>
+              </div>
             </div>
-            <div className="p-8 bg-cream-50 border border-cream-200/60 rounded-sm">
-              <h3 className="font-serif text-xl text-warm-900 mb-4">
-                Shrimati Usha Devi
-              </h3>
-              <p className="text-sm text-warm-800/60 leading-relaxed">
-                His mother and first teacher, an advanced Iyengar Yoga
-                practitioner who began teaching him the Bhagavad Gita at the
-                age of four.
-              </p>
+            <div className="bg-cream-50 border border-cream-200/60 rounded-sm overflow-hidden">
+              <div className="aspect-[16/10] relative">
+                <Image
+                  src="/images/teacher-1.jpg"
+                  alt="Shrimati Usha Devi teaching"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-8">
+                <h3 className="font-serif text-xl text-warm-900 mb-4">
+                  Shrimati Usha Devi
+                </h3>
+                <p className="text-sm text-warm-800/60 leading-relaxed">
+                  His mother and first teacher, an advanced Iyengar Yoga
+                  practitioner who began teaching him the Bhagavad Gita at the
+                  age of four.
+                </p>
+              </div>
             </div>
           </div>
         </div>
