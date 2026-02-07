@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import WipBanner from "@/components/WipBanner";
 import SectionHeading from "@/components/SectionHeading";
 import { bio, teachings } from "@/data/about";
 import { onlineClasses } from "@/data/online-classes";
@@ -10,6 +11,7 @@ import { BookOpen, Globe, Video, ArrowRight } from "lucide-react";
 export default function HomePage() {
   return (
     <>
+      <WipBanner />
       <Header />
 
       {/* Hero */}

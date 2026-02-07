@@ -19,12 +19,17 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-cream-50/90 backdrop-blur-md border-b border-saffron-100/50">
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="group">
-          <span className="font-serif text-2xl font-semibold text-warm-900 tracking-wide">
-            Samatva
+        <Link href="/" className="group flex items-center gap-3">
+          <span>
+            <span className="font-serif text-2xl font-semibold text-warm-900 tracking-wide">
+              Samatva
+            </span>
+            <span className="font-serif text-2xl font-light text-saffron-600 tracking-wide ml-1">
+              Yoga
+            </span>
           </span>
-          <span className="font-serif text-2xl font-light text-saffron-600 tracking-wide ml-1">
-            Yoga
+          <span className="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-widest bg-saffron-500 text-cream-50 rounded-sm leading-tight">
+            WIP
           </span>
         </Link>
 
