@@ -6,11 +6,13 @@ import SectionHeading from "@/components/SectionHeading";
 import {
   intensiveCourses,
   regularClasses,
+  philosophyCourse,
+  facilityHours,
   internationalWorkshops,
   summerClosure,
   homeBase,
 } from "@/data/travels";
-import { MapPin, Calendar, Clock, Mail, Users, Info } from "lucide-react";
+import { MapPin, Calendar, Clock, Mail, Users, Info, BookOpen } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "In-Person Workshops | Samatva Yoga",
@@ -167,6 +169,57 @@ export default function InPersonPage() {
               </div>
             ))}
           </div>
+          {/* Philosophy Course + Facility Hours */}
+          <div className="mt-6 grid sm:grid-cols-2 gap-6">
+            {/* Philosophy Course */}
+            <div className="bg-cream-50 border border-cream-200/60 rounded-sm p-6">
+              <div className="flex items-start gap-3 mb-3">
+                <BookOpen size={16} className="text-saffron-600 mt-0.5 shrink-0" />
+                <div>
+                  <h3 className="font-serif text-lg text-warm-900">
+                    {philosophyCourse.title}
+                  </h3>
+                  <p className="text-xs text-saffron-600">
+                    {philosophyCourse.instructor}
+                  </p>
+                </div>
+              </div>
+              <p className="text-sm text-warm-800/60 mb-2">
+                {philosophyCourse.topics}
+              </p>
+              <p className="text-sm text-warm-800/65">
+                {philosophyCourse.pricing}
+              </p>
+              <p className="text-xs text-warm-800/40 mt-3 italic">
+                {philosophyCourse.status}
+              </p>
+            </div>
+
+            {/* Facility Hours */}
+            <div className="bg-cream-50 border border-cream-200/60 rounded-sm p-6">
+              <h3 className="font-serif text-lg text-warm-900 mb-4">
+                Facility Hours
+              </h3>
+              <div className="space-y-2.5 text-sm">
+                <div className="flex items-start gap-2.5 text-warm-800/60">
+                  <Clock size={14} className="text-sage-600 mt-0.5 shrink-0" />
+                  <div>
+                    <p className="text-warm-800/70 font-medium">Self-Practice</p>
+                    <p>{facilityHours.selfPractice}</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-2.5 text-warm-800/60">
+                  <Info size={14} className="text-sage-600 mt-0.5 shrink-0" />
+                  <div>
+                    <p className="text-warm-800/70 font-medium">Office Hours</p>
+                    <p>Morning: {facilityHours.officeMorning}</p>
+                    <p>Evening: {facilityHours.officeEvening}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <p className="mt-4 text-xs text-warm-800/40 text-center">
             <MapPin size={12} className="inline mr-1" />
             {homeBase.address}

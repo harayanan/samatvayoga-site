@@ -52,9 +52,11 @@ export const regularClasses: RegularClass[] = [
       { sessions: "1 class/week", price: "\u20B91,000" },
       { sessions: "2 classes/week", price: "\u20B91,400" },
       { sessions: "3 classes/week", price: "\u20B91,700" },
-      { sessions: "4\u20136 classes/week", price: "\u20B91,800\u2013\u20B92,000" },
+      { sessions: "4 classes/week", price: "\u20B91,800" },
+      { sessions: "5 classes/week", price: "\u20B91,900" },
+      { sessions: "6 classes/week", price: "\u20B92,000" },
     ],
-    note: "Drop-in format. Suspended during intensive courses.",
+    note: "Drop-in format. No registration required. Suspended during intensive courses.",
   },
   {
     title: "Beginners\u2019 Yoga Classes",
@@ -62,10 +64,13 @@ export const regularClasses: RegularClass[] = [
     schedule: "Monday\u2013Saturday, 4:00\u20135:30 PM",
     pricing: [
       { sessions: "1 class/week", price: "\u20B9600" },
-      { sessions: "2\u20133 classes/week", price: "\u20B9800\u2013\u20B91,000" },
-      { sessions: "4\u20136 classes/week", price: "\u20B91,200\u2013\u20B91,500" },
+      { sessions: "2 classes/week", price: "\u20B9800" },
+      { sessions: "3 classes/week", price: "\u20B91,000" },
+      { sessions: "4 classes/week", price: "\u20B91,200" },
+      { sessions: "5 classes/week", price: "\u20B91,400" },
+      { sessions: "6 classes/week", price: "\u20B91,500" },
     ],
-    note: "Drop-in format. Continues during intensives.",
+    note: "Drop-in format. Continues during intensive courses.",
   },
   {
     title: "Children\u2019s Yoga Classes",
@@ -75,6 +80,20 @@ export const regularClasses: RegularClass[] = [
     note: "Drop-in format.",
   },
 ];
+
+export const philosophyCourse = {
+  title: "Philosophy Course",
+  instructor: "Siddhartha Krishna",
+  topics: "Bhagavad Gita & Upanishads",
+  pricing: "\u20B9800 + donation",
+  status: "Dates soon to be announced",
+};
+
+export const facilityHours = {
+  selfPractice: "Monday\u2013Saturday, 8:00\u201310:30 AM",
+  officeMorning: "7:30\u201310:30 AM",
+  officeEvening: "3:00\u20138:00 PM",
+};
 
 export const internationalWorkshops: InternationalWorkshop[] = [
   {
@@ -154,7 +173,7 @@ export const summerClosure = {
 export const homeBase = {
   name: "Patanjala Yoga Kendra",
   address:
-    "Swami Swatantranand Ashram, Chandreshwar Nagar, Rishikesh, Uttarakhand 249137, India",
+    "Swami Swatantranand Ashram, Next to Swami Dayananda Ashram, Sisham Jhadi, Chandreshwar Nagar, Rishikesh, Uttarakhand 249137, India",
   description:
     "The home centre where Shri Siddhartha Krishna teaches regularly. An authorized Iyengar Yoga Centre established in 1993 on the banks of the holy River Ganga.",
   schedule: [
