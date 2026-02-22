@@ -21,8 +21,9 @@
 | Route | Description |
 |-------|-------------|
 | `/` | Homepage — hero, Gita quote, teacher preview, philosophy, teachings grid, subjects, CTA |
-| `/about` | Full biography, teaching philosophy, subjects, lineage & tradition, **Usha Devi full bio with recovery story** |
-| `/about/sage-patanjali` | **NEW** — Sage Patanjali: life, legends, yoga philosophy, Yoga Sutras, Yama & Niyama grid |
+| `/about` | Biography, teaching philosophy, subjects, compact lineage cards (5) linking to sub-pages |
+| `/about/usha-devi` | **NEW** — Shrimati Usha Devi: bio, recovery story, Times of India profile, Saga Health quote |
+| `/about/sage-patanjali` | Sage Patanjali: life, legends, yoga philosophy, Yoga Sutras, Yama & Niyama grid |
 | `/teachings/online-classes` | 5 online courses with schedule details, registration CTA |
 | `/teachings/talks` | **Featured BKS Iyengar "Be A Sadhaka" speech (collapsible)**, YouTube link, 4 talk categories |
 | `/teachings/travels` | Home base info, upcoming events (2), guest invitation CTA |
@@ -38,15 +39,16 @@ src/
 │   ├── globals.css                     # Tailwind 4 @theme (Saffron, Sage, Cream, Warm)
 │   ├── icon.svg                        # Om symbol favicon
 │   ├── about/
-│   │   ├── page.tsx                    # About — expanded with Usha Devi section
-│   │   └── sage-patanjali/page.tsx     # NEW — Sage Patanjali page
+│   │   ├── page.tsx                    # About — focused on Siddhartha, compact lineage cards
+│   │   ├── usha-devi/page.tsx          # Shrimati Usha Devi dedicated sub-page
+│   │   └── sage-patanjali/page.tsx     # Sage Patanjali page
 │   ├── contact/page.tsx
 │   └── teachings/
 │       ├── online-classes/page.tsx
 │       ├── talks/page.tsx              # Updated — featured speech + collapsible
 │       └── travels/page.tsx
 ├── components/
-│   ├── Header.tsx                      # Fixed nav with WIP badge + mobile menu (7 links now)
+│   ├── Header.tsx                      # Fixed nav with WIP badge + mobile menu (6 links)
 │   ├── Footer.tsx                      # Dark footer with Gita quote
 │   ├── WipBanner.tsx                   # Modal disclaimer (sessionStorage dismiss)
 │   └── SectionHeading.tsx              # Reusable section title component
@@ -71,7 +73,7 @@ src/
 
 ## Build Status
 
-Build passes cleanly. 11 static pages generated (was 10), ~107-114 KB First Load JS per page.
+Build passes cleanly. 13 static pages generated, ~107-114 KB First Load JS per page.
 
 ## Environment Variables
 
@@ -89,13 +91,13 @@ Build passes cleanly. 11 static pages generated (was 10), ~107-114 KB First Load
 
 ## What Was Done This Session
 
-- **Added Usha Devi full biography** to About page — intro, teaching style, two accident recovery stories, Times of India "23 Surgeries" profile, Saga Health Magazine quote. Data in `ushaDeviBio` export in `about.ts`.
-- **Added BKS Iyengar "Be A Sadhaka" speech** to Talks page — featured section with 4 key teachings grid, collapsible full speech text, closing quote. Talks page converted to client component for expand/collapse. Data in `featuredSpeech` export in `talks.ts`.
-- **Created Sage Patanjali page** at `/about/sage-patanjali` — hero, introduction, life/legends, yoga philosophy (dark section), Yoga Sutras explanation, Yama & Niyama grid (5+5). New data file `sage-patanjali.ts`.
-- **Updated Header navigation** — added "Sage Patanjali" link between About and Online Classes (7 nav links now).
-- **Replaced Usha Devi card** in Lineage section with Sage Patanjali card (with link), moved Usha Devi to her own full-width section below.
-- All content sourced from `old-site-archive/` (scraped from old WordPress site).
-- Build passes cleanly (11 static pages).
+- **Cleaned up About page** — removed full Usha Devi section (bio, recovery, Times of India, quote) and replaced 4-card Lineage grid with compact 5-card grid (3-column layout). Cards now include Usha Devi and Sage Patanjali with "Read more" links to sub-pages, plus Kailas Ashram (text-only), Patanjala Yoga Kendra (with image), Iyengar Yoga Tradition (with image).
+- **Created Usha Devi sub-page** at `/about/usha-devi` — hero, photo + bio, recovery story section, Times of India "23 Surgeries" article, Saga Health Magazine closing quote. Follows same pattern as sage-patanjali page.
+- **Removed "Sage Patanjali" from Header nav** — reduced from 7 to 6 links. Sub-pages are now accessible via the About page's lineage cards.
+- Build passes cleanly (13 static pages).
+
+### Previous Session
+- Added Usha Devi full biography, BKS Iyengar "Be A Sadhaka" speech, Sage Patanjali page, content from old WordPress site.
 
 ## Next Steps
 

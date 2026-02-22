@@ -4,7 +4,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SectionHeading from "@/components/SectionHeading";
-import { bio, teachings, ushaDeviBio } from "@/data/about";
+import { bio, teachings } from "@/data/about";
 
 export const metadata: Metadata = {
   title: "About Shri Siddhartha Krishna | Samatva Yoga",
@@ -106,14 +106,62 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Tradition */}
+      {/* Lineage & Tradition */}
       <section className="py-24 bg-cream-100/50">
         <div className="max-w-4xl mx-auto px-6">
           <SectionHeading title="Lineage & Tradition" />
-          <div className="mt-12 grid sm:grid-cols-2 gap-8">
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Shrimati Usha Devi */}
+            <Link
+              href="/about/usha-devi"
+              className="group bg-cream-50 border border-cream-200/60 rounded-sm overflow-hidden hover:border-saffron-300/60 transition-colors"
+            >
+              <div className="aspect-[16/10] relative">
+                <Image
+                  src="/images/teacher-1.jpg"
+                  alt="Shrimati Usha Devi"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-serif text-lg text-warm-900 mb-2">
+                  Shrimati Usha Devi
+                </h3>
+                <p className="text-sm text-warm-800/60 leading-relaxed mb-3">
+                  Resident instructor at Patanjala Yoga Kendra and advanced
+                  Iyengar Yoga teacher. A remarkable story of recovery through
+                  Yoga.
+                </p>
+                <span className="text-xs text-saffron-600 group-hover:text-saffron-700 transition-colors">
+                  Read more &rarr;
+                </span>
+              </div>
+            </Link>
+
+            {/* Sage Patanjali */}
+            <Link
+              href="/about/sage-patanjali"
+              className="group bg-cream-50 border border-cream-200/60 rounded-sm overflow-hidden hover:border-saffron-300/60 transition-colors"
+            >
+              <div className="p-6">
+                <h3 className="font-serif text-lg text-warm-900 mb-2">
+                  Sage Patanjali
+                </h3>
+                <p className="text-sm text-warm-800/60 leading-relaxed mb-3">
+                  The greatest expounder of Yoga and author of the Yoga Sutras —
+                  the foundational text on the philosophy and practice of Yoga.
+                </p>
+                <span className="text-xs text-saffron-600 group-hover:text-saffron-700 transition-colors">
+                  Read more &rarr;
+                </span>
+              </div>
+            </Link>
+
+            {/* Kailas Ashram */}
             <div className="bg-cream-50 border border-cream-200/60 rounded-sm overflow-hidden">
-              <div className="p-8">
-                <h3 className="font-serif text-xl text-warm-900 mb-4">
+              <div className="p-6">
+                <h3 className="font-serif text-lg text-warm-900 mb-2">
                   Kailas Ashram Brahma Vidya Pitha
                 </h3>
                 <p className="text-sm text-warm-800/60 leading-relaxed">
@@ -123,6 +171,8 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
+
+            {/* Patanjala Yoga Kendra */}
             <div className="bg-cream-50 border border-cream-200/60 rounded-sm overflow-hidden">
               <div className="aspect-[16/10] relative">
                 <Image
@@ -132,8 +182,8 @@ export default function AboutPage() {
                   className="object-cover"
                 />
               </div>
-              <div className="p-8">
-                <h3 className="font-serif text-xl text-warm-900 mb-4">
+              <div className="p-6">
+                <h3 className="font-serif text-lg text-warm-900 mb-2">
                   Patanjala Yoga Kendra
                 </h3>
                 <p className="text-sm text-warm-800/60 leading-relaxed">
@@ -143,6 +193,8 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
+
+            {/* The Iyengar Yoga Tradition */}
             <div className="bg-cream-50 border border-cream-200/60 rounded-sm overflow-hidden">
               <div className="aspect-[16/10] relative">
                 <Image
@@ -152,8 +204,8 @@ export default function AboutPage() {
                   className="object-cover object-top"
                 />
               </div>
-              <div className="p-8">
-                <h3 className="font-serif text-xl text-warm-900 mb-4">
+              <div className="p-6">
+                <h3 className="font-serif text-lg text-warm-900 mb-2">
                   The Iyengar Yoga Tradition
                 </h3>
                 <p className="text-sm text-warm-800/60 leading-relaxed">
@@ -162,111 +214,6 @@ export default function AboutPage() {
                   Sutras of Patanjali.
                 </p>
               </div>
-            </div>
-            <div className="bg-cream-50 border border-cream-200/60 rounded-sm overflow-hidden">
-              <div className="p-8">
-                <h3 className="font-serif text-xl text-warm-900 mb-4">
-                  <Link
-                    href="/about/sage-patanjali"
-                    className="hover:text-saffron-700 transition-colors"
-                  >
-                    Sage Patanjali
-                  </Link>
-                </h3>
-                <p className="text-sm text-warm-800/60 leading-relaxed">
-                  The greatest expounder of Yoga and author of the Yoga Sutras —
-                  the foundational text on the philosophy and practice of Yoga.
-                </p>
-                <Link
-                  href="/about/sage-patanjali"
-                  className="inline-block mt-3 text-xs text-saffron-600 hover:text-saffron-700 transition-colors"
-                >
-                  Read more &rarr;
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Usha Devi — Featured Section */}
-      <section className="py-24">
-        <div className="max-w-4xl mx-auto px-6">
-          <SectionHeading
-            title={ushaDeviBio.name}
-            subtitle={ushaDeviBio.role}
-          />
-          <div className="mt-12 grid md:grid-cols-5 gap-12 items-start">
-            {/* Photo */}
-            <div className="md:col-span-2">
-              <div className="aspect-[3/4] rounded-sm relative overflow-hidden">
-                <Image
-                  src="/images/teacher-1.jpg"
-                  alt="Shrimati Usha Devi teaching"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-3 border border-cream-100/20 rounded-sm" />
-              </div>
-            </div>
-
-            {/* Bio content */}
-            <div className="md:col-span-3 space-y-6">
-              <p className="text-warm-800/75 leading-relaxed text-base">
-                {ushaDeviBio.intro}
-              </p>
-              <p className="text-warm-800/75 leading-relaxed text-base">
-                {ushaDeviBio.teachingStyle}
-              </p>
-
-              {/* Recovery Story */}
-              <div className="mt-8 pt-8 border-t border-cream-200/60">
-                <h3 className="font-serif text-2xl text-warm-900 mb-6">
-                  The Accidents & Recovery
-                </h3>
-                <p className="text-warm-800/75 leading-relaxed text-base mb-4">
-                  {ushaDeviBio.recovery.summary}
-                </p>
-                <p className="text-warm-800/75 leading-relaxed text-base mb-4">
-                  {ushaDeviBio.recovery.secondAccident}
-                </p>
-                <blockquote className="border-l-2 border-saffron-400 pl-6 my-6">
-                  <p className="text-warm-800/70 leading-relaxed italic text-base">
-                    {ushaDeviBio.recovery.ownWords}
-                  </p>
-                </blockquote>
-                <p className="text-warm-800/75 leading-relaxed text-base">
-                  {ushaDeviBio.recovery.reflection}
-                </p>
-              </div>
-
-              {/* Times of India */}
-              <div className="mt-8 pt-8 border-t border-cream-200/60">
-                <h3 className="font-serif text-2xl text-warm-900 mb-2">
-                  &ldquo;{ushaDeviBio.timesOfIndia.headline}&rdquo;
-                </h3>
-                <p className="text-xs text-warm-800/40 mb-6">
-                  {ushaDeviBio.timesOfIndia.source}
-                </p>
-                {ushaDeviBio.timesOfIndia.text.map((para, i) => (
-                  <p
-                    key={i}
-                    className="text-warm-800/70 leading-relaxed text-sm mb-4"
-                  >
-                    {para}
-                  </p>
-                ))}
-              </div>
-
-              {/* Saga Health Quote */}
-              <blockquote className="border-l-2 border-saffron-400 pl-6 mt-8">
-                <p className="text-warm-800/70 leading-relaxed italic text-base">
-                  &ldquo;{ushaDeviBio.sagaQuote.text}&rdquo;
-                </p>
-                <footer className="mt-2 text-xs text-warm-800/40">
-                  — {ushaDeviBio.sagaQuote.source}
-                </footer>
-              </blockquote>
             </div>
           </div>
         </div>
