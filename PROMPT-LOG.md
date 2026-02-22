@@ -22,3 +22,9 @@
 
 4. **"delete karmayoga project folder and the html"**
    - Deleted `/root/claudecode/karma-yoga-deploy/` and `/root/claudecode/karma-yoga.html`
+
+5. **"https://lightslategrey-finch-566548.hostingersite.com/ this is an old site, create a new subfolder in the current project and copy all these pages into it. i am going to delete this old site once you are done. also see if you want to repurpose any of the content for our site pages."**
+   - Scraped all 15 pages from old WordPress site (Patanjala Yoga Kendra)
+   - Created `old-site-archive/` subfolder with 13 clean markdown files
+   - Created `REPURPOSE-NOTES.md` with content analysis and recommendations
+   - Key repurposable content: Usha Devi's story, BKS Iyengar speech, correct address/contact, course pricing, Sage Patanjali content
