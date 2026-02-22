@@ -197,6 +197,18 @@ export default function AdminPage() {
     if (authed && pat) loadFromGitHub();
   }, [authed, pat, loadFromGitHub]);
 
+  // --- Auth ---
+  const [showPwd, setShowPwd] = useState(false);
+
+  function handleLogin() {
+    if (password === ADMIN_PASSWORD) {
+      setAuthError("");
+      setAuthed(true);
+    } else {
+      setAuthError("Incorrect password");
+    }
+  }
+
   // --- Auth Gate ---
   if (!authed) {
     return (
@@ -204,27 +216,31 @@ export default function AdminPage() {
         <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200 w-full max-w-sm">
           <h1 className="text-lg font-semibold text-gray-900 mb-1">Samatva Yoga — Admin</h1>
           <p className="text-sm text-gray-500 mb-6">Enter password to continue</p>
-          <input
-            type="password"
-            className={`${inputCls} mb-3`}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                if (password === ADMIN_PASSWORD) setAuthed(true);
-                else setAuthError("Incorrect password");
-              }
-            }}
-            placeholder="Password"
-          />
+          <div className="relative mb-3">
+            <input
+              type={showPwd ? "text" : "password"}
+              className={`${inputCls} pr-10`}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              onKeyDown={(e) => { if (e.key === "Enter") handleLogin(); }}
+              placeholder="Password"
+              autoFocus
+            />
+            <button
+              type="button"
+              onClick={() => setShowPwd(!showPwd)}
+              className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              tabIndex={-1}
+            >
+              {showPwd ? (
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.98 8.223A10.477 10.477 0 0012 5.25c3.904 0 7.26 2.14 8.98 5.25a10.477 10.477 0 01-8.98 5.25 10.477 10.477 0 01-8.02-5.25z" /><circle cx={12} cy={10.5} r={2.25} /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 3l18 18" /></svg>
+              ) : (
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><circle cx={12} cy={12} r={2.25} /></svg>
+              )}
+            </button>
+          </div>
           {authError && <p className="text-xs text-red-500 mb-3">{authError}</p>}
-          <button
-            className={`${btnPrimary} w-full`}
-            onClick={() => {
-              if (password === ADMIN_PASSWORD) setAuthed(true);
-              else setAuthError("Incorrect password");
-            }}
-          >
+          <button className={`${btnPrimary} w-full`} onClick={handleLogin}>
             Sign In
           </button>
         </div>
