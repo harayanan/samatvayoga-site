@@ -28,3 +28,12 @@
    - Created `old-site-archive/` subfolder with 13 clean markdown files
    - Created `REPURPOSE-NOTES.md` with content analysis and recommendations
    - Key repurposable content: Usha Devi's story, BKS Iyengar speech, correct address/contact, course pricing, Sage Patanjali content
+
+6. **"Implement plan: Add Repurposed Content from Old Site"**
+   - Added Usha Devi full biography to About page (intro, teaching style, recovery story, Times of India profile, Saga quote)
+   - Added BKS Iyengar "Be A Sadhaka" speech to Talks page (featured collapsible section with key teachings grid)
+   - Created new Sage Patanjali page at `/about/sage-patanjali` (life, yoga philosophy, Yoga Sutras, Yama & Niyama)
+   - Updated Header navigation with Sage Patanjali link
+   - New data file: `src/data/sage-patanjali.ts`
+   - Modified: `about.ts`, `talks.ts`, `about/page.tsx`, `talks/page.tsx`, `Header.tsx`
+   - Build passes cleanly (11 static pages)

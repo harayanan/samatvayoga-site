@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/about/sage-patanjali", label: "Sage Patanjali" },
   { href: "/teachings/online-classes", label: "Online Classes" },
   { href: "/teachings/talks", label: "Talks & Archive" },
   { href: "/teachings/travels", label: "Travels" },

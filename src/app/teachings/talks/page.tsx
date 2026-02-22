@@ -1,21 +1,19 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import SectionHeading from "@/components/SectionHeading";
-import { talkCategories, youtubeChannelUrl } from "@/data/talks";
+import { talkCategories, featuredSpeech, youtubeChannelUrl } from "@/data/talks";
 import {
   Video,
   FileText,
   Headphones,
   ExternalLink,
   Youtube,
+  ChevronDown,
+  ChevronUp,
+  BookOpen,
 } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "Talks & Archive | Samatva Yoga",
-  description:
-    "Past lectures, recorded discourses, and published writings on Vedanta and Yoga philosophy by Shri Siddhartha Krishna.",
-};
 
 const typeIcons = {
   video: Video,
@@ -24,6 +22,8 @@ const typeIcons = {
 };
 
 export default function TalksPage() {
+  const [speechExpanded, setSpeechExpanded] = useState(false);
+
   return (
     <>
       <Header />
@@ -50,6 +50,120 @@ export default function TalksPage() {
             growing treasury of wisdom from the Vedantic tradition.
           </p>
           <div className="mt-6 h-px w-16 bg-saffron-500/30 mx-auto" />
+        </div>
+      </section>
+
+      {/* Featured Speech — BKS Iyengar */}
+      <section className="py-12 md:py-16">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="bg-warm-900 rounded-sm overflow-hidden">
+            {/* Header */}
+            <div className="p-8 md:p-10">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-10 h-10 rounded-full bg-saffron-500/20 flex items-center justify-center shrink-0 mt-1">
+                  <BookOpen size={18} className="text-saffron-400" />
+                </div>
+                <div>
+                  <p className="text-xs text-saffron-400/70 uppercase tracking-widest mb-1">
+                    Featured Speech
+                  </p>
+                  <h2 className="font-serif text-2xl md:text-3xl text-cream-100">
+                    &ldquo;{featuredSpeech.title}&rdquo;
+                  </h2>
+                  <p className="text-cream-200/60 mt-1">
+                    {featuredSpeech.speaker} &middot; {featuredSpeech.date}
+                  </p>
+                  <p className="text-cream-200/40 text-sm">
+                    {featuredSpeech.location}
+                  </p>
+                </div>
+              </div>
+
+              <p className="text-cream-200/70 leading-relaxed mt-6 text-sm">
+                {featuredSpeech.introduction}
+              </p>
+
+              {/* Key Teachings Grid */}
+              <div className="grid sm:grid-cols-2 gap-4 mt-8">
+                {featuredSpeech.keyTeachings.map((teaching) => (
+                  <div
+                    key={teaching.sanskrit}
+                    className="bg-cream-100/5 border border-cream-200/10 rounded-sm p-4"
+                  >
+                    <p className="font-serif text-saffron-400 text-sm">
+                      {teaching.sanskrit}
+                    </p>
+                    <p className="text-cream-100 text-xs mt-0.5">
+                      {teaching.english}
+                    </p>
+                    <p className="text-cream-200/50 text-xs mt-2 leading-relaxed">
+                      {teaching.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Speech paragraphs */}
+              <div className="mt-8 space-y-4">
+                {(speechExpanded
+                  ? featuredSpeech.paragraphs
+                  : featuredSpeech.paragraphs.slice(
+                      0,
+                      featuredSpeech.previewParagraphs
+                    )
+                ).map((para, i) => (
+                  <p
+                    key={i}
+                    className="text-cream-200/60 leading-relaxed text-sm"
+                  >
+                    {para}
+                  </p>
+                ))}
+
+                {!speechExpanded && (
+                  <div className="relative">
+                    <div className="absolute inset-x-0 -top-16 h-16 bg-gradient-to-t from-warm-900 to-transparent" />
+                  </div>
+                )}
+              </div>
+
+              {/* Toggle button */}
+              <button
+                onClick={() => setSpeechExpanded(!speechExpanded)}
+                className="mt-6 flex items-center gap-2 text-saffron-400 hover:text-saffron-300 transition-colors text-sm group"
+              >
+                {speechExpanded ? (
+                  <>
+                    <ChevronUp
+                      size={16}
+                      className="group-hover:-translate-y-0.5 transition-transform"
+                    />
+                    Show less
+                  </>
+                ) : (
+                  <>
+                    <ChevronDown
+                      size={16}
+                      className="group-hover:translate-y-0.5 transition-transform"
+                    />
+                    Read full speech
+                  </>
+                )}
+              </button>
+
+              {/* Closing quote */}
+              {speechExpanded && (
+                <blockquote className="border-l-2 border-saffron-400/50 pl-6 mt-8">
+                  <p className="text-cream-200/70 leading-relaxed italic text-sm">
+                    &ldquo;{featuredSpeech.closingQuote}&rdquo;
+                  </p>
+                  <footer className="mt-2 text-xs text-cream-200/40">
+                    — {featuredSpeech.attribution}
+                  </footer>
+                </blockquote>
+              )}
+            </div>
+          </div>
         </div>
       </section>
 
