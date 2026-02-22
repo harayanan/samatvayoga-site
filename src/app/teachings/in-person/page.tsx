@@ -66,7 +66,7 @@ export default function InPersonPage() {
           <div className="mt-8 p-5 bg-saffron-50/50 border border-saffron-200/40 rounded-sm text-center">
             <p className="text-sm text-warm-800/70 font-medium">
               <Info size={14} className="inline mr-1.5 text-saffron-600" />
-              {summerClosure.note}: {summerClosure.dates}
+              {summerClosure.note}
             </p>
             <p className="text-xs text-warm-800/50 mt-1">
               {summerClosure.detail}

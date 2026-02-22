@@ -163,8 +163,7 @@ export const internationalWorkshops: InternationalWorkshop[] = [
 ];
 
 export const summerClosure = {
-  note: "Rishikesh centre closed for summer",
-  dates: "3 May\u20131 Nov 2026",
+  note: "Rishikesh centre closed from 3rd May to 1st November 2026",
   detail:
     "During this period, Usha Devi and Siddhartha Krishna travel internationally for workshops and lectures.",
 };
