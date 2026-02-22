@@ -111,6 +111,55 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto px-6">
           <SectionHeading title="Lineage & Tradition" />
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Sage Patanjali */}
+            <Link
+              href="/about/sage-patanjali"
+              className="group bg-cream-50 border border-cream-200/60 rounded-sm overflow-hidden hover:border-saffron-300/60 transition-colors"
+            >
+              <div className="aspect-[16/10] relative">
+                <Image
+                  src="/images/sage-patanjali.webp"
+                  alt="Sage Patanjali statue at Patanjala Yoga Kendra"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-serif text-lg text-warm-900 mb-2">
+                  Sage Patanjali
+                </h3>
+                <p className="text-sm text-warm-800/60 leading-relaxed mb-3">
+                  The greatest expounder of Yoga and author of the Yoga Sutras —
+                  the foundational text on the philosophy and practice of Yoga.
+                </p>
+                <span className="text-xs text-saffron-600 group-hover:text-saffron-700 transition-colors">
+                  Read more &rarr;
+                </span>
+              </div>
+            </Link>
+
+            {/* The Iyengar Yoga Tradition */}
+            <div className="bg-cream-50 border border-cream-200/60 rounded-sm overflow-hidden">
+              <div className="aspect-[16/10] relative">
+                <Image
+                  src="/images/light-room.jpg"
+                  alt="B.K.S. Iyengar Guruji"
+                  fill
+                  className="object-cover object-top"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-serif text-lg text-warm-900 mb-2">
+                  The Iyengar Yoga Tradition
+                </h3>
+                <p className="text-sm text-warm-800/60 leading-relaxed">
+                  Rooted in the method of B.K.S. Iyengar Guruji, firmly based in
+                  the ancient Indian tradition of Yoga as defined in the Yoga
+                  Sutras of Patanjali.
+                </p>
+              </div>
+            </div>
+
             {/* Shrimati Usha Devi */}
             <Link
               href="/about/usha-devi"
@@ -139,27 +188,16 @@ export default function AboutPage() {
               </div>
             </Link>
 
-            {/* Sage Patanjali */}
-            <Link
-              href="/about/sage-patanjali"
-              className="group bg-cream-50 border border-cream-200/60 rounded-sm overflow-hidden hover:border-saffron-300/60 transition-colors"
-            >
-              <div className="p-6">
-                <h3 className="font-serif text-lg text-warm-900 mb-2">
-                  Sage Patanjali
-                </h3>
-                <p className="text-sm text-warm-800/60 leading-relaxed mb-3">
-                  The greatest expounder of Yoga and author of the Yoga Sutras —
-                  the foundational text on the philosophy and practice of Yoga.
-                </p>
-                <span className="text-xs text-saffron-600 group-hover:text-saffron-700 transition-colors">
-                  Read more &rarr;
-                </span>
-              </div>
-            </Link>
-
             {/* Kailas Ashram */}
             <div className="bg-cream-50 border border-cream-200/60 rounded-sm overflow-hidden">
+              <div className="aspect-[16/10] relative">
+                <Image
+                  src="/images/kailas-ashram.jpg"
+                  alt="Kailas Ashram Brahma Vidya Pitha, Rishikesh"
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <div className="p-6">
                 <h3 className="font-serif text-lg text-warm-900 mb-2">
                   Kailas Ashram Brahma Vidya Pitha
@@ -190,28 +228,6 @@ export default function AboutPage() {
                   An authorized Iyengar Yoga Centre established in 1993 on the
                   banks of the holy River Ganga in Rishikesh, founded by Shrimati
                   Usha Devi.
-                </p>
-              </div>
-            </div>
-
-            {/* The Iyengar Yoga Tradition */}
-            <div className="bg-cream-50 border border-cream-200/60 rounded-sm overflow-hidden">
-              <div className="aspect-[16/10] relative">
-                <Image
-                  src="/images/light-room.jpg"
-                  alt="B.K.S. Iyengar Guruji"
-                  fill
-                  className="object-cover object-top"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="font-serif text-lg text-warm-900 mb-2">
-                  The Iyengar Yoga Tradition
-                </h3>
-                <p className="text-sm text-warm-800/60 leading-relaxed">
-                  Rooted in the method of B.K.S. Iyengar Guruji, firmly based in
-                  the ancient Indian tradition of Yoga as defined in the Yoga
-                  Sutras of Patanjali.
                 </p>
               </div>
             </div>
