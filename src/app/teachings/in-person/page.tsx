@@ -12,7 +12,16 @@ import {
   summerClosure,
   homeBase,
 } from "@/data/travels";
-import { MapPin, Calendar, Clock, Mail, Users, Info, BookOpen } from "lucide-react";
+import {
+  MapPin,
+  Calendar,
+  Clock,
+  Mail,
+  Users,
+  Info,
+  BookOpen,
+  ExternalLink,
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: "In-Person Workshops | Samatva Yoga",
@@ -43,15 +52,71 @@ export default function InPersonPage() {
             In-Person Workshops
           </h1>
           <p className="mt-4 text-warm-800/60 text-lg font-light max-w-2xl mx-auto">
-            Intensive courses and regular classes at {homeBase.name}, Rishikesh
-            — plus international workshops across the world.
+            International workshops across the world, intensive courses and
+            regular classes at {homeBase.name}, Rishikesh.
           </p>
           <div className="mt-6 h-px w-16 bg-saffron-500/30 mx-auto" />
         </div>
       </section>
 
-      {/* Intensive Yoga Courses */}
+      {/* International Workshops 2026 */}
       <section className="py-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <SectionHeading
+            title="International Workshops 2026"
+            subtitle="Workshops and intensives across the world — tap a card to view full details"
+          />
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {internationalWorkshops.map((ws) => (
+              <a
+                key={ws.id}
+                href={ws.image}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-cream-50 border border-cream-200/60 rounded-sm overflow-hidden hover:border-saffron-300/60 hover:shadow-lg transition-all duration-300"
+              >
+                {ws.image && (
+                  <div className="aspect-[4/3] relative overflow-hidden">
+                    <Image
+                      src={ws.image}
+                      alt={`${ws.city}, ${ws.country} workshop poster`}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                )}
+                <div className="p-5">
+                  <h3 className="font-serif text-base text-warm-900">
+                    {ws.city}
+                  </h3>
+                  <p className="text-xs text-warm-800/50 mt-0.5">
+                    {ws.country}
+                  </p>
+                  <div className="flex items-center gap-1.5 mt-3 text-sm text-saffron-700">
+                    <Calendar size={13} />
+                    <span>{ws.dates}</span>
+                  </div>
+                  <p className="flex items-center gap-1.5 mt-2 text-xs text-warm-800/40 group-hover:text-saffron-600 transition-colors">
+                    <ExternalLink size={11} />
+                    View full poster
+                  </p>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          {/* Summer closure notice */}
+          <div className="mt-8 p-4 bg-saffron-50/50 border border-saffron-200/40 rounded-sm text-center">
+            <p className="text-sm text-warm-800/60">
+              <Info size={14} className="inline mr-1.5 text-saffron-600" />
+              {summerClosure.note}: {summerClosure.dates}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Intensive Yoga Courses */}
+      <section className="py-20 bg-cream-100/50">
         <div className="max-w-5xl mx-auto px-6">
           <SectionHeading
             title={intensiveCourses.title}
@@ -106,11 +171,17 @@ export default function InPersonPage() {
               {/* Info cards */}
               <div className="mt-6 space-y-3">
                 <div className="flex items-start gap-3 text-sm text-warm-800/65">
-                  <Users size={16} className="text-saffron-600 mt-0.5 shrink-0" />
+                  <Users
+                    size={16}
+                    className="text-saffron-600 mt-0.5 shrink-0"
+                  />
                   <span>{intensiveCourses.requirement}</span>
                 </div>
                 <div className="flex items-start gap-3 text-sm text-warm-800/65">
-                  <Info size={16} className="text-saffron-600 mt-0.5 shrink-0" />
+                  <Info
+                    size={16}
+                    className="text-saffron-600 mt-0.5 shrink-0"
+                  />
                   <span>{intensiveCourses.pricing}</span>
                 </div>
               </div>
@@ -120,7 +191,7 @@ export default function InPersonPage() {
       </section>
 
       {/* Regular Classes at Rishikesh */}
-      <section className="py-20 bg-cream-100/50">
+      <section className="py-20">
         <div className="max-w-5xl mx-auto px-6">
           <SectionHeading
             title="Regular Classes"
@@ -174,7 +245,10 @@ export default function InPersonPage() {
             {/* Philosophy Course */}
             <div className="bg-cream-50 border border-cream-200/60 rounded-sm p-6">
               <div className="flex items-start gap-3 mb-3">
-                <BookOpen size={16} className="text-saffron-600 mt-0.5 shrink-0" />
+                <BookOpen
+                  size={16}
+                  className="text-saffron-600 mt-0.5 shrink-0"
+                />
                 <div>
                   <h3 className="font-serif text-lg text-warm-900">
                     {philosophyCourse.title}
@@ -202,9 +276,14 @@ export default function InPersonPage() {
               </h3>
               <div className="space-y-2.5 text-sm">
                 <div className="flex items-start gap-2.5 text-warm-800/60">
-                  <Clock size={14} className="text-sage-600 mt-0.5 shrink-0" />
+                  <Clock
+                    size={14}
+                    className="text-sage-600 mt-0.5 shrink-0"
+                  />
                   <div>
-                    <p className="text-warm-800/70 font-medium">Self-Practice</p>
+                    <p className="text-warm-800/70 font-medium">
+                      Self-Practice
+                    </p>
                     <p>{facilityHours.selfPractice}</p>
                   </div>
                 </div>
@@ -224,55 +303,6 @@ export default function InPersonPage() {
             <MapPin size={12} className="inline mr-1" />
             {homeBase.address}
           </p>
-        </div>
-      </section>
-
-      {/* International Workshops 2026 */}
-      <section className="py-20">
-        <div className="max-w-5xl mx-auto px-6">
-          <SectionHeading
-            title="International Workshops 2026"
-            subtitle="Workshops and intensives across the world"
-          />
-          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {internationalWorkshops.map((ws) => (
-              <div
-                key={ws.id}
-                className="bg-cream-50 border border-cream-200/60 rounded-sm overflow-hidden hover:border-saffron-200/60 transition-colors"
-              >
-                {ws.image && (
-                  <div className="aspect-[4/3] relative">
-                    <Image
-                      src={ws.image}
-                      alt={`${ws.city}, ${ws.country} workshop`}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                )}
-                <div className="p-5">
-                  <h3 className="font-serif text-base text-warm-900">
-                    {ws.city}
-                  </h3>
-                  <p className="text-xs text-warm-800/50 mt-0.5">
-                    {ws.country}
-                  </p>
-                  <div className="flex items-center gap-1.5 mt-3 text-sm text-saffron-700">
-                    <Calendar size={13} />
-                    <span>{ws.dates}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Summer closure notice */}
-          <div className="mt-8 p-4 bg-saffron-50/50 border border-saffron-200/40 rounded-sm text-center">
-            <p className="text-sm text-warm-800/60">
-              <Info size={14} className="inline mr-1.5 text-saffron-600" />
-              {summerClosure.note}: {summerClosure.dates}
-            </p>
-          </div>
         </div>
       </section>
 
