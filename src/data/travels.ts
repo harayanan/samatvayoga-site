@@ -56,7 +56,7 @@ export const regularClasses: RegularClass[] = [
       { sessions: "5 classes/week", price: "\u20B91,900" },
       { sessions: "6 classes/week", price: "\u20B92,000" },
     ],
-    note: "Drop-in format. No registration required. Suspended during intensive courses.",
+    note: "Drop-in, no registration required. No general classes during the Intensive Courses.",
   },
   {
     title: "Beginners\u2019 Yoga Classes",
@@ -70,14 +70,14 @@ export const regularClasses: RegularClass[] = [
       { sessions: "5 classes/week", price: "\u20B91,400" },
       { sessions: "6 classes/week", price: "\u20B91,500" },
     ],
-    note: "Drop-in format. Continues during intensive courses.",
+    note: "Drop-in, no registration required. Continues during Intensive Courses.",
   },
   {
     title: "Children\u2019s Yoga Classes",
     instructor: "Ekta Ghale",
     schedule: "Sundays, 9:00\u201310:30 AM",
     pricing: [{ sessions: "All sessions", price: "Free" }],
-    note: "Drop-in format.",
+    note: "No registration required, drop-in classes, free entrance.",
   },
 ];
 
@@ -85,7 +85,7 @@ export const philosophyCourse = {
   title: "Philosophy Course",
   instructor: "Siddhartha Krishna",
   topics: "Bhagavad Gita & Upanishads",
-  pricing: "\u20B9800 + donation",
+  pricing: "Registration fee: \u20B9800 per course + donation",
   status: "Dates soon to be announced",
 };
 
@@ -163,8 +163,10 @@ export const internationalWorkshops: InternationalWorkshop[] = [
 ];
 
 export const summerClosure = {
-  note: "Centre closed for summer vacations",
+  note: "Rishikesh centre closed for summer",
   dates: "3 May\u20131 Nov 2026",
+  detail:
+    "During this period, Usha Devi and Siddhartha Krishna travel internationally for workshops and lectures.",
 };
 
 /**

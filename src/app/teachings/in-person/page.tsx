@@ -3,6 +3,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SectionHeading from "@/components/SectionHeading";
+import PosterViewer from "@/components/PosterViewer";
 import {
   intensiveCourses,
   regularClasses,
@@ -12,16 +13,7 @@ import {
   summerClosure,
   homeBase,
 } from "@/data/travels";
-import {
-  MapPin,
-  Calendar,
-  Clock,
-  Mail,
-  Users,
-  Info,
-  BookOpen,
-  ExternalLink,
-} from "lucide-react";
+import { MapPin, Clock, Mail, Users, Info, BookOpen } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "In-Person Workshops | Samatva Yoga",
@@ -66,50 +58,18 @@ export default function InPersonPage() {
             title="International Workshops 2026"
             subtitle="Workshops and intensives across the world — tap a card to view full details"
           />
-          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {internationalWorkshops.map((ws) => (
-              <a
-                key={ws.id}
-                href={ws.image}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-cream-50 border border-cream-200/60 rounded-sm overflow-hidden hover:border-saffron-300/60 hover:shadow-lg transition-all duration-300"
-              >
-                {ws.image && (
-                  <div className="aspect-[4/3] relative overflow-hidden">
-                    <Image
-                      src={ws.image}
-                      alt={`${ws.city}, ${ws.country} workshop poster`}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                )}
-                <div className="p-5">
-                  <h3 className="font-serif text-base text-warm-900">
-                    {ws.city}
-                  </h3>
-                  <p className="text-xs text-warm-800/50 mt-0.5">
-                    {ws.country}
-                  </p>
-                  <div className="flex items-center gap-1.5 mt-3 text-sm text-saffron-700">
-                    <Calendar size={13} />
-                    <span>{ws.dates}</span>
-                  </div>
-                  <p className="flex items-center gap-1.5 mt-2 text-xs text-warm-800/40 group-hover:text-saffron-600 transition-colors">
-                    <ExternalLink size={11} />
-                    View full poster
-                  </p>
-                </div>
-              </a>
-            ))}
+          <div className="mt-12">
+            <PosterViewer workshops={internationalWorkshops} />
           </div>
 
-          {/* Summer closure notice */}
-          <div className="mt-8 p-4 bg-saffron-50/50 border border-saffron-200/40 rounded-sm text-center">
-            <p className="text-sm text-warm-800/60">
+          {/* Rishikesh centre closure notice */}
+          <div className="mt-8 p-5 bg-saffron-50/50 border border-saffron-200/40 rounded-sm text-center">
+            <p className="text-sm text-warm-800/70 font-medium">
               <Info size={14} className="inline mr-1.5 text-saffron-600" />
               {summerClosure.note}: {summerClosure.dates}
+            </p>
+            <p className="text-xs text-warm-800/50 mt-1">
+              {summerClosure.detail}
             </p>
           </div>
         </div>
