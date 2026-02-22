@@ -177,6 +177,36 @@ export default function HomePage() {
               </div>
             </Link>
 
+            {/* In-Person Workshops */}
+            <Link
+              href="/teachings/travels"
+              className="group bg-cream-100/50 border border-cream-200 rounded-sm hover:border-saffron-200 hover:bg-saffron-50/30 transition-all duration-500 overflow-hidden"
+            >
+              <div className="aspect-[16/10] relative overflow-hidden">
+                <Image
+                  src="/images/class-scene.jpg"
+                  alt="Yoga class at Patanjala Yoga Kendra"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <div className="p-8">
+                <div className="w-10 h-10 rounded-full bg-cream-200 flex items-center justify-center mb-4 group-hover:bg-cream-300 transition-colors duration-300">
+                  <Globe size={16} className="text-saffron-800" />
+                </div>
+                <h3 className="font-serif text-xl text-warm-900 mb-3">
+                  In-Person Workshops
+                </h3>
+                <p className="text-sm text-warm-800/60 leading-relaxed mb-4">
+                  In-person workshops, retreats, and lecture series across India
+                  and around the world.
+                </p>
+                <p className="text-sm text-warm-800/40">
+                  Upcoming events & home base
+                </p>
+              </div>
+            </Link>
+
             {/* Talks & Archive */}
             <Link
               href="/teachings/talks"
@@ -203,36 +233,6 @@ export default function HomePage() {
                 </p>
                 <p className="text-sm text-warm-800/40">
                   Videos, articles & publications
-                </p>
-              </div>
-            </Link>
-
-            {/* Travels */}
-            <Link
-              href="/teachings/travels"
-              className="group bg-cream-100/50 border border-cream-200 rounded-sm hover:border-saffron-200 hover:bg-saffron-50/30 transition-all duration-500 overflow-hidden"
-            >
-              <div className="aspect-[16/10] relative overflow-hidden">
-                <Image
-                  src="/images/class-scene.jpg"
-                  alt="Yoga class at Patanjala Yoga Kendra"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-              <div className="p-8">
-                <div className="w-10 h-10 rounded-full bg-cream-200 flex items-center justify-center mb-4 group-hover:bg-cream-300 transition-colors duration-300">
-                  <Globe size={16} className="text-saffron-800" />
-                </div>
-                <h3 className="font-serif text-xl text-warm-900 mb-3">
-                  Travels & Workshops
-                </h3>
-                <p className="text-sm text-warm-800/60 leading-relaxed mb-4">
-                  In-person workshops, retreats, and lecture series across India
-                  and around the world.
-                </p>
-                <p className="text-sm text-warm-800/40">
-                  Upcoming events & home base
                 </p>
               </div>
             </Link>

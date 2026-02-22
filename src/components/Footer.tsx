@@ -36,16 +36,16 @@ export default function Footer() {
                 Online Classes
               </Link>
               <Link
+                href="/teachings/travels"
+                className="block text-sm hover:text-saffron-400 transition-colors"
+              >
+                In-Person Workshops
+              </Link>
+              <Link
                 href="/teachings/talks"
                 className="block text-sm hover:text-saffron-400 transition-colors"
               >
                 Talks & Archive
-              </Link>
-              <Link
-                href="/teachings/travels"
-                className="block text-sm hover:text-saffron-400 transition-colors"
-              >
-                Travels & Workshops
               </Link>
               <Link
                 href="/contact"

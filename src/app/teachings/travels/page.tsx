@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Travels & Workshops | Samatva Yoga",
+  title: "In-Person Workshops | Samatva Yoga",
   description:
     "In-person workshops, retreats, and lecture series by Shri Siddhartha Krishna across India and around the world.",
 };
@@ -52,7 +52,7 @@ export default function TravelsPage() {
             Teachings
           </p>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-warm-900 tracking-wide">
-            Travels & Workshops
+            In-Person Workshops
           </h1>
           <p className="mt-4 text-warm-800/60 text-lg font-light max-w-2xl mx-auto">
             In-person sessions, intensives, and workshops — carrying the
