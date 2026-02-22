@@ -88,7 +88,7 @@ src/
 
 ## Build Status
 
-Build passes cleanly. 13 static pages generated, ~107–114 KB First Load JS per page.
+Build passes cleanly. 14 static pages generated (including `/admin`), ~107–114 KB First Load JS per page.
 
 ## Environment Variables
 
@@ -96,26 +96,30 @@ Build passes cleanly. 13 static pages generated, ~107–114 KB First Load JS per
 
 ## What Was Done This Session
 
-- **Cleaned up About page** — removed full Usha Devi section, replaced with compact 5-card lineage grid (3-column, all with images). Added Sage Patanjali statue photo from iyengaryoga.in, Kailas Ashram photo from Wikimedia. Reordered: Sage Patanjali → Iyengar Yoga → Usha Devi → Kailas Ashram → Patanjala Yoga Kendra.
-- **Created Usha Devi sub-page** at `/about/usha-devi` — hero, photo + bio, recovery story, Times of India article, Saga Health quote.
-- **Removed "Sage Patanjali" from Header nav** — reduced from 7 to 6 links.
-- **Renamed "Travels" to "In-Person Workshops"** — updated label everywhere (Header, Footer, homepage grid), moved nav position to right after Online Classes.
-- **Changed URL** from `/teachings/travels` to `/teachings/in-person`.
-- **Replaced WhatsApp number with TBC** across all pages (contact, footer, online classes, homepage, data files).
-- **Rebuilt in-person page** with real schedule data scraped from iyengaryoga.in/schedule:
-  - 6 intensive course dates (Nov 2025–Apr 2026) with color-coded status
-  - 3 regular class types with full 6-tier pricing grids
-  - In-person philosophy course (dates TBA)
-  - Facility hours (self-practice, office hours)
-  - 8 international workshop cards with poster images (4-column grid)
-  - Summer closure notice
-- Downloaded 10 new images from iyengaryoga.in for workshops and lineage cards.
+- **Built admin content editor** at `/admin` — client-side page for editing Online Classes and In-Person content
+  - Password-gated entry (not linked in navigation)
+  - GitHub PAT config (stored in localStorage) for direct commits
+  - Two tabs: Online Classes, In-Person & Workshops
+  - Full CRUD for all data: classes, workshops, intensive sessions, regular classes, pricing tiers, philosophy course, facility hours, summer closure, home base
+  - "Publish to GitHub" commits updated TypeScript data files directly via GitHub REST API → Vercel auto-redeploys
+  - "Copy to Clipboard" fallback for manual pasting
+  - "Reset" to revert to build-time data
+  - Fetches latest file SHA from GitHub on mount to avoid stale commits
+  - Clean admin UI (neutral grays, Tailwind, no spiritual theme)
+- **5 new files** (all additive, no existing files modified):
+  - `src/app/admin/page.tsx` — main admin page (~450 lines)
+  - `src/lib/admin/types.ts` — form state types
+  - `src/lib/admin/github.ts` — GitHub API helpers (fetch + commit)
+  - `src/lib/admin/serialize-online.ts` — online-classes.ts serializer
+  - `src/lib/admin/serialize-travels.ts` — travels.ts serializer
 
 ### Previous Sessions
+- Cleaned up About page, created Usha Devi sub-page, renamed Travels to In-Person, rebuilt in-person page with schedule data, downloaded workshop images.
 - Added Usha Devi full biography, BKS Iyengar "Be A Sadhaka" speech, Sage Patanjali page, content from old WordPress site.
 
 ## Next Steps
 
+- [ ] Deploy and test admin page — set GitHub PAT with Contents:RW scope
 - [ ] Get content approval from Shri Siddhartha Krishna / site owner
 - [ ] Add confirmed WhatsApp number (currently TBC everywhere)
 - [ ] Update philosophy course dates once announced
@@ -131,3 +135,4 @@ None. Site is fully functional and deployed.
 
 ---
 *Last reviewed: 2026-02-22*
+*Admin editor added: 2026-02-22*
