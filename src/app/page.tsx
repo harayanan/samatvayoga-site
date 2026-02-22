@@ -179,7 +179,7 @@ export default function HomePage() {
 
             {/* In-Person Workshops */}
             <Link
-              href="/teachings/travels"
+              href="/teachings/in-person"
               className="group bg-cream-100/50 border border-cream-200 rounded-sm hover:border-saffron-200 hover:bg-saffron-50/30 transition-all duration-500 overflow-hidden"
             >
               <div className="aspect-[16/10] relative overflow-hidden">

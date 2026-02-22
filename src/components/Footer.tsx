@@ -36,7 +36,7 @@ export default function Footer() {
                 Online Classes
               </Link>
               <Link
-                href="/teachings/travels"
+                href="/teachings/in-person"
                 className="block text-sm hover:text-saffron-400 transition-colors"
               >
                 In-Person Workshops

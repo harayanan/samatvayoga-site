@@ -136,7 +136,7 @@ export default function ContactPage() {
               Online Class Schedule
             </Link>
             <Link
-              href="/teachings/travels"
+              href="/teachings/in-person"
               className="px-6 py-3 bg-cream-50 border border-cream-200 text-warm-800 text-sm rounded-sm hover:border-saffron-200 transition-colors"
             >
               Upcoming Workshops
