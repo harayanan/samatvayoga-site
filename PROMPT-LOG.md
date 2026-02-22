@@ -19,3 +19,6 @@
    - Created this PROMPT-LOG.md file
    - Created PROMPT-LOG.md across all 30 projects
    - Updated core memory with new preference
+
+4. **"delete karmayoga project folder and the html"**
+   - Deleted `/root/claudecode/karma-yoga-deploy/` and `/root/claudecode/karma-yoga.html`
