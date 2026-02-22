@@ -1,60 +1,164 @@
-export interface TravelEvent {
-  id: string;
-  title: string;
-  location: string;
-  country: string;
-  date: string;
-  endDate?: string;
-  description: string;
-  type: "workshop" | "retreat" | "lecture-series" | "intensive";
-  status: "upcoming" | "ongoing" | "completed";
-  registrationUrl?: string;
-  contactEmail?: string;
+/**
+ * EDITABLE: In-person workshops, intensives, and class schedule.
+ * Source: https://www.iyengaryoga.in/schedule
+ * Last updated: 2026-02-22
+ */
+
+export interface IntensiveCourse {
+  dates: string;
+  status: "upcoming" | "completed" | "ongoing";
 }
 
-/**
- * EDITABLE: Update this array to add/remove/modify travel events and workshops.
- * Set status to "upcoming" for future events, "ongoing" for current, "completed" for past.
- * Changes here will automatically reflect on the website.
- */
-export const travelEvents: TravelEvent[] = [
+export interface RegularClass {
+  title: string;
+  instructor: string;
+  schedule: string;
+  pricing: { sessions: string; price: string }[];
+  note?: string;
+}
+
+export interface InternationalWorkshop {
+  id: string;
+  city: string;
+  country: string;
+  dates: string;
+  image?: string;
+  status: "upcoming" | "completed";
+}
+
+export const intensiveCourses = {
+  title: "Intensive Yoga Courses",
+  instructor: "Usha Devi",
+  location: "Swami Swatantranand Ashram, Rishikesh",
+  requirement: "At least 3 years of regular practice is required",
+  pricing: "\u20B98,500 per course + \u20B92,000 registration fee",
+  image: "/images/workshop-intensive.webp",
+  sessions: [
+    { dates: "12\u201320 Nov 2025", status: "completed" as const },
+    { dates: "17\u201325 Dec 2025", status: "completed" as const },
+    { dates: "14\u201322 Jan 2026", status: "completed" as const },
+    { dates: "18\u201326 Feb 2026", status: "ongoing" as const },
+    { dates: "18\u201326 Mar 2026", status: "upcoming" as const },
+    { dates: "08\u201316 Apr 2026", status: "upcoming" as const },
+  ],
+};
+
+export const regularClasses: RegularClass[] = [
   {
-    id: "rishikesh-intensive-2026",
-    title: "Bhagavad Gita Intensive",
-    location: "Patanjala Yoga Kendra, Rishikesh",
-    country: "India",
-    date: "March 2026",
-    endDate: "March 2026",
-    description:
-      "An immersive week-long intensive on the Bhagavad Gita at the home centre in Rishikesh, combining philosophy lectures with daily yoga practice.",
-    type: "intensive",
-    status: "upcoming",
-    contactEmail: "info@iyengaryoga.in",
+    title: "General Yoga Classes",
+    instructor: "Usha Devi",
+    schedule: "Monday\u2013Saturday, 6:00\u20137:30 PM",
+    pricing: [
+      { sessions: "1 class/week", price: "\u20B91,000" },
+      { sessions: "2 classes/week", price: "\u20B91,400" },
+      { sessions: "3 classes/week", price: "\u20B91,700" },
+      { sessions: "4\u20136 classes/week", price: "\u20B91,800\u2013\u20B92,000" },
+    ],
+    note: "Drop-in format. Suspended during intensive courses.",
   },
   {
-    id: "europe-tour-2026",
-    title: "Vedanta & Yoga Philosophy Workshop",
-    location: "Various Cities",
-    country: "Europe",
-    date: "Summer 2026",
-    description:
-      "A series of workshops across European cities exploring the core teachings of Vedanta through the lens of the Bhagavad Gita and Upanishads.",
-    type: "workshop",
-    status: "upcoming",
-    contactEmail: "info@iyengaryoga.in",
+    title: "Beginners\u2019 Yoga Classes",
+    instructor: "Ekta Ghale",
+    schedule: "Monday\u2013Saturday, 4:00\u20135:30 PM",
+    pricing: [
+      { sessions: "1 class/week", price: "\u20B9600" },
+      { sessions: "2\u20133 classes/week", price: "\u20B9800\u2013\u20B91,000" },
+      { sessions: "4\u20136 classes/week", price: "\u20B91,200\u2013\u20B91,500" },
+    ],
+    note: "Drop-in format. Continues during intensives.",
+  },
+  {
+    title: "Children\u2019s Yoga Classes",
+    instructor: "Ekta Ghale",
+    schedule: "Sundays, 9:00\u201310:30 AM",
+    pricing: [{ sessions: "All sessions", price: "Free" }],
+    note: "Drop-in format.",
   },
 ];
 
+export const internationalWorkshops: InternationalWorkshop[] = [
+  {
+    id: "china-2026",
+    city: "China",
+    country: "China",
+    dates: "1\u201317 May 2026",
+    image: "/images/workshop-china.webp",
+    status: "upcoming",
+  },
+  {
+    id: "zurich-2026",
+    city: "Zurich",
+    country: "Switzerland",
+    dates: "17\u201319 Jul 2026",
+    image: "/images/workshop-zurich.webp",
+    status: "upcoming",
+  },
+  {
+    id: "budapest-2026",
+    city: "Budapest",
+    country: "Hungary",
+    dates: "24\u201326 Jul 2026",
+    image: "/images/workshop-budapest.webp",
+    status: "upcoming",
+  },
+  {
+    id: "bilbao-2026",
+    city: "Bilbao",
+    country: "Spain",
+    dates: "31 Jul\u20132 Aug 2026",
+    image: "/images/workshop-bilbao.jpg",
+    status: "upcoming",
+  },
+  {
+    id: "buenos-aires-2026",
+    city: "Buenos Aires",
+    country: "Argentina",
+    dates: "21\u201323 Aug 2026",
+    image: "/images/workshop-buenos-aires.webp",
+    status: "upcoming",
+  },
+  {
+    id: "bahia-blanca-2026",
+    city: "Bah\u00EDa Blanca",
+    country: "Argentina",
+    dates: "27\u201330 Aug 2026",
+    image: "/images/workshop-bahia-blanca.webp",
+    status: "upcoming",
+  },
+  {
+    id: "chile-2026",
+    city: "Chile",
+    country: "Chile",
+    dates: "11\u201313 Sep 2026",
+    image: "/images/workshop-chile.webp",
+    status: "upcoming",
+  },
+  {
+    id: "germany-2026",
+    city: "Germany",
+    country: "Germany",
+    dates: "16\u201318 Oct 2026",
+    image: "/images/workshop-germany.webp",
+    status: "upcoming",
+  },
+];
+
+export const summerClosure = {
+  note: "Centre closed for summer vacations",
+  dates: "3 May\u20131 Nov 2026",
+};
+
 /**
- * EDITABLE: The home base information.
+ * Home base information (used on contact page too).
  */
 export const homeBase = {
   name: "Patanjala Yoga Kendra",
-  address: "Swami Swatantranand Ashram, Rishikesh, Uttarakhand 249137, India",
+  address:
+    "Swami Swatantranand Ashram, Chandreshwar Nagar, Rishikesh, Uttarakhand 249137, India",
   description:
     "The home centre where Shri Siddhartha Krishna teaches regularly. An authorized Iyengar Yoga Centre established in 1993 on the banks of the holy River Ganga.",
   schedule: [
-    { day: "Monday – Saturday", time: "Regular classes and lectures" },
+    { day: "Monday \u2013 Saturday", time: "Regular classes and lectures" },
     { day: "Sunday", time: "Closed" },
   ],
 };
