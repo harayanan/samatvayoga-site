@@ -68,14 +68,9 @@ export default function Footer() {
               >
                 {socialLinks.email}
               </a>
-              <a
-                href={`https://wa.me/${socialLinks.whatsapp.replace(/[^0-9]/g, "")}`}
-                className="block hover:text-saffron-400 transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                WhatsApp: {socialLinks.whatsapp}
-              </a>
+              <span className="block text-cream-300/40">
+                WhatsApp: TBC
+              </span>
               <a
                 href={socialLinks.youtube}
                 className="block hover:text-saffron-400 transition-colors"

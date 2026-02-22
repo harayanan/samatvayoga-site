@@ -61,26 +61,21 @@ export default function ContactPage() {
               </p>
             </a>
 
-            {/* WhatsApp */}
-            <a
-              href={`https://wa.me/${socialLinks.whatsapp.replace(/[^0-9]/g, "")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group p-8 bg-cream-100/50 border border-cream-200/80 rounded-sm hover:border-sage-200/60 transition-all duration-500"
-            >
-              <div className="w-12 h-12 rounded-full bg-sage-100 flex items-center justify-center mb-5 group-hover:bg-sage-200 transition-colors">
+            {/* WhatsApp — TBC */}
+            <div className="group p-8 bg-cream-100/50 border border-cream-200/80 rounded-sm">
+              <div className="w-12 h-12 rounded-full bg-sage-100 flex items-center justify-center mb-5">
                 <MessageCircle size={20} className="text-sage-700" />
               </div>
               <h3 className="font-serif text-xl text-warm-900 mb-2">
                 WhatsApp
               </h3>
-              <p className="text-sage-700 text-sm font-medium">
-                {socialLinks.whatsapp}
+              <p className="text-warm-800/40 text-sm font-medium">
+                TBC
               </p>
               <p className="text-warm-800/40 text-xs mt-2">
                 For class registration
               </p>
-            </a>
+            </div>
 
             {/* YouTube */}
             <a

@@ -274,7 +274,7 @@ export default function HomePage() {
           </h2>
           <p className="mt-6 text-warm-800/60 leading-relaxed max-w-xl mx-auto">
             All online classes are donation-based and open to sincere seekers.
-            Connect via WhatsApp or email to register.
+            Connect via email to register.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Link

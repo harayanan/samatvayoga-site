@@ -73,7 +73,7 @@ export const onlineClasses: OnlineClass[] = [
 ];
 
 export const registrationInfo = {
-  whatsapp: "+91 730 0654 448",
+  whatsapp: "TBC",
   email: "info@iyengaryoga.in",
-  note: "All online classes are donation-based. To register, please reach out via WhatsApp or email.",
+  note: "All online classes are donation-based. To register, please reach out via email.",
 };

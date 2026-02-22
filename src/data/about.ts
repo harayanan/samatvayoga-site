@@ -75,6 +75,6 @@ export const socialLinks = {
   youtube: "https://www.youtube.com/@SiddarthaKrishna",
   twitter: "https://x.com/siddhakrishna",
   email: "info@iyengaryoga.in",
-  whatsapp: "+91 730 0654 448",
+  whatsapp: "TBC",
   website: "https://www.iyengaryoga.in/siddharthakrishna",
 };

@@ -100,15 +100,10 @@ export default function OnlineClassesPage() {
             light
           />
           <div className="mt-12 flex flex-col sm:flex-row gap-6 justify-center">
-            <a
-              href={`https://wa.me/${registrationInfo.whatsapp.replace(/[^0-9]/g, "")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-sage-700 text-cream-100 font-medium text-sm tracking-wide rounded-sm hover:bg-sage-800 transition-colors duration-300"
-            >
+            <span className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-sage-700/50 text-cream-100/50 font-medium text-sm tracking-wide rounded-sm">
               <MessageCircle size={18} />
-              WhatsApp: {registrationInfo.whatsapp}
-            </a>
+              WhatsApp: TBC
+            </span>
             <a
               href={`mailto:${registrationInfo.email}`}
               className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-cream-200/20 text-cream-200 font-medium text-sm tracking-wide rounded-sm hover:bg-cream-200/5 transition-colors duration-300"
