@@ -27,7 +27,7 @@ import type {
   HomeBaseForm,
 } from "@/lib/admin/types";
 
-const ADMIN_PASSWORD = "samatvayoga-admin";
+const ADMIN_PASSWORD = "samatvayoga2026";
 const GITHUB_OWNER = "harayanan";
 const GITHUB_REPO = "samatvayoga-site";
 const ONLINE_PATH = "src/data/online-classes.ts";
